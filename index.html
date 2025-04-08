@@ -207,14 +207,13 @@
     </div>
   </div>
   <footer>
-    <span class="copyright-text"><span style="white-space:nowrap;">Copyright <span id="current-year"></span> <i class="fas fa-copyright"></i> <span class="bazzite-name">Bazzite Project</span></span> and <a style="white-space:nowrap;" href="https://universal-blue.org/" target="_blank">Universal Blue</a></span><br><br>
-    <script>
-      document.getElementById("current-year").textContent = new Date().getFullYear();
-    </script>
+    <span class="copyright-text"><span style="white-space:nowrap;">Copyright <span id="current-year"></span> <i class="fas fa-copyright"></i> <span class="bazzite-name">Bazzite Project</span></span> and <a style="white-space:nowrap;" href="https://universal-blue.org/" target="_blank">Universal Blue</a></span><br>
     <span class="affiliated">Bazzite is not affiliated with or endorsed by the <span style="white-space:nowrap;">Fedora Project</span></span>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
   <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       75,
