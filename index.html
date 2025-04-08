@@ -21,13 +21,17 @@
       width: 100%;
       position:absolute;
     }
+    .logo {
+      margin-right: 30px;
+    }
     .logo,
     .logo-text {
       font-family: "FiraCode Nerd Font";
       white-space: nowrap;
-      margin-right: 20px;
       text-rendering: optimizeLegibility;
       font-variant-ligatures: normal;
+      font-size: 20px;
+      float: left;
     }
     .white-text {
       color: #cfcfcf;
@@ -41,55 +45,83 @@
     .purple-text {
       color: #c061cb;
     }
+    .terminal {
+      background:#1e1e1eb8;
+      border-radius: 25px;
+      padding:70px 30px 20px 0px;
+      backdrop-filter: blur(20px);
+      border: 1px solid #3e3e3e;
+      line-height: 24px;
+    }
+    .titlebar {
+      background:#303030;
+      height: 50px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+      border:1px solid #3e3e3e;
+      top: 0px;
+    }
+    .titlebar > span {
+      color: #fff;
+      font-family: "FiraCode Nerd Font";
+      text-align: center;
+      width: 100%;
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 18px;
+    }
   </style>
   <link href="https://cdn.jsdelivr.net/gh/mshaugh/nerdfont-webfonts@v3.3.0/build/firacode-nerd-font.css" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <div class="logo">
-      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%%%%%%<span class="white-bg">====</span>%%%%%%%%%%</span><br>
-      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%%%%%%%%</span><br>
-      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%%%%%%%%%%</span><br>
-      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%%%%%%%%%</span><span class="purple-text">###</span><br>
-      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%%%%%%%<span class="purple-text">######</span></span><br>
-      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp<span class="white-bg">==&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp====</span><span class="purple-text white-bg">===</span><span class="purple-text">######</span></span></span><br>
-      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp<span class="white-bg">==&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp==</span><span class="purple-text white-bg">=======</span><span class="purple-text">#####</span></span></span><br>
-      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%<span class="purple-text">####<span class="white-bg">======</span>#####</span></span><br>
-      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%<span class="purple-text">#######<span class="white-bg">=====</span>#####</span></span><br>
-      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%<span class="purple-text">#########<span class="white-bg">=====</span>#####</span></span><br>
-      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%<span class="purple-text">##########<span class="white-bg">=====</span>#####</span></span><br>
-      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">====</span><span class="purple-text">###########<span class="white-bg">=====</span>######</span></span><br>
-      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp%%%%%%%%<span class="white-bg">====</span><span class="purple-text">#########<span class="white-bg">======</span>######</span></span><br>
-      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%%%%%%%<span class="white-bg">=====</span><span class="purple-text">#####<span class="white-bg">========</span>######</span></span><br>
-      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%%%%<span class="purple-text">###<span class="white-bg">===============</span>#######</span></span><br>
-      <span class="purple-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%<span class="purple-text">#######<span class="white-bg">==========</span>#########</span></span><br>
-      <span class="purple-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp#######################</span><br>
-      <span class="purple-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp###################</span><br>
-      <span class="purple-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp###########</span><br>
-    </div>
-    <div class="logo-text white-text">
-      <span class="purple-text">󱋩</span>&nbsp->&nbspbazzite-gnome:testing <br>
-      <span class="purple-text">󰣛</span>&nbsp->&nbspBazzite 41 (FROM Fedora Silverblue)<br>
-      <span class="purple-text"></span>&nbsp->&nbspLinux 6.13.9-104.bazzite.fc41.x86_64<br>
-      <span class="purple-text">󰅐</span>&nbsp->&nbsp3 hours, 15 mins<br>
-      <span class="purple-text">󰔠</span>&nbsp->&nbspSpawned on Mar 04 2024<br>
-      <br>
-      <span class="purple-text">󰾰</span>&nbsp->&nbspMS-7C60 (1.0)<br>
-      <span class="purple-text">󰻠</span>&nbsp->&nbspAMD Ryzen Threadripper 3960X 24-Core (48) @ 4.57z<br>
-      <span class="purple-text">󰍛</span>&nbsp->&nbspAMD Radeon RX 6900 XT [Discrete]<br>
-      <span class="purple-text"></span>&nbsp->&nbsp14.08 GiB / 62.67 GiB (22%)<br>
-      <span class="purple-text"></span>&nbsp->&nbsp737.42 GiB / 1.82 TiB (40%) - btrfs [Read-only]<br>
-      <span class="purple-text"></span>&nbsp->&nbsp3.07 TiB / 3.64 TiB (84%) - btrfs<br>
-      <span class="purple-text"></span>&nbsp->&nbsp240.34 GiB / 931.51 GiB (26%) - btrfs<br>
-      <span class="purple-text">󰍹</span>&nbsp->&nbsp3440x1440 @ 160 Hz in 34" [External]<br>
-      <span class="purple-text">󰖺</span>&nbsp->&nbspWooting Two<br>
-      <span class="purple-text">󰖺</span>&nbsp->&nbspMicrosoft X-Box 360 pad 0<br>
-      <br>
-      <span class="purple-text">󰕮</span>&nbsp->&nbspGNOME 47.4<br>
-      <span class="purple-text"></span>&nbsp->&nbspMutter (Wayland)<br>
-      <span class="purple-text"></span>&nbsp->&nbspbash 5.2.32<br>
-      <span class="purple-text"></span>&nbsp->&nbspPtyxis 47.12<br>
-      <span class="purple-text">󰏖</span>&nbsp->&nbsp2379 (rpm), 120 (flatpak), 40 (brew)<br>
+    <div class="terminal">
+      <div class="titlebar">
+        <span>Bazzite DX (Developer eXperience)</span>
+      </div>
+      <div class="logo">
+        <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%%%%%%<span class="white-bg">====</span>%%%%%%%%%%</span><br>
+        <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%%%%%%%%</span><br>
+        <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%%%%%%%%%%</span><br>
+        <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%%%%%%%%%</span><span class="purple-text">###</span><br>
+        <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%%%%%%%<span class="purple-text">######</span></span><br>
+        <span class="blue-text">&nbsp&nbsp&nbsp&nbsp<span class="white-bg">==&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp====</span><span class="purple-text white-bg">===</span><span class="purple-text">######</span></span></span><br>
+        <span class="blue-text">&nbsp&nbsp&nbsp&nbsp<span class="white-bg">==&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp==</span><span class="purple-text white-bg">=======</span><span class="purple-text">#####</span></span></span><br>
+        <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%<span class="purple-text">####<span class="white-bg">======</span>#####</span></span><br>
+        <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%<span class="purple-text">#######<span class="white-bg">=====</span>#####</span></span><br>
+        <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%<span class="purple-text">#########<span class="white-bg">=====</span>#####</span></span><br>
+        <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%<span class="purple-text">##########<span class="white-bg">=====</span>#####</span></span><br>
+        <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">====</span><span class="purple-text">###########<span class="white-bg">=====</span>######</span></span><br>
+        <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp%%%%%%%%<span class="white-bg">====</span><span class="purple-text">#########<span class="white-bg">======</span>######</span></span><br>
+        <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%%%%%%%<span class="white-bg">=====</span><span class="purple-text">#####<span class="white-bg">========</span>######</span></span><br>
+        <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%%%%<span class="purple-text">###<span class="white-bg">===============</span>#######</span></span><br>
+        <span class="purple-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%<span class="purple-text">#######<span class="white-bg">==========</span>#########</span></span><br>
+        <span class="purple-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp#######################</span><br>
+        <span class="purple-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp###################</span><br>
+        <span class="purple-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp###########</span><br>
+      </div>
+      <div class="logo-text white-text">
+        <span class="purple-text">󰣛</span>&nbsp->&nbspPowered by Fedora & Universal Blue<br>
+        <span class="purple-text"></span>&nbsp->&nbspThe next generation of Linux Gaming, now for your workstation<br>
+        <br>
+        <span class="purple-text"></span>&nbsp->&nbspApplications by Flathub<br>
+        <span class="purple-text"></span>&nbsp->&nbspCLI powered with Homebrew on-tap<br>
+        <span class="purple-text"></span>&nbsp->&nbspDocker ready-to-use<br>
+        <span class="purple-text"></span>&nbsp->&nbspVisual Studio Code with devcontainers<br>
+        <span class="purple-text"></span>&nbsp->&nbspContainer centric terminal<br>
+        <br>
+        <span class="purple-text">󰻠</span>&nbsp->&nbspNear-zero maintenance<br>
+        <span class="purple-text">󰍛</span>&nbsp->&nbspIncluded GPU drivers<br>
+        <span class="purple-text">󰚰</span>&nbsp->&nbspAutomatic image-based updates<br>
+        <span class="purple-text"></span>&nbsp->&nbspEasy rollbacks in the event of an issue<br>
+        <br>
+        <a style="color:#2976d3;" href="https://bazzite.gg/" target="_blank">See our main website for more information</a>
+      </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
