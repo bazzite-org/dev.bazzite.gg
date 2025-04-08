@@ -318,7 +318,7 @@
     <div class="terminal">
       <div class="titlebar">
         <span>Bazzite DX (Developer eXperience)</span>
-        <a class="close fade-transition hidden-fade"><i class="fa fa-x"></i></a>
+        <a class="close" style="display:none;"><i class="fa fa-x"></i></a>
       </div>
       <div class="logo fade-transition shown-fade">
         <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%%%%%%<span class="white-bg">====</span>%%%%%%%%%%</span><br>
@@ -413,7 +413,7 @@
       jQuery('.logo').addClass('hidden-fade').removeClass('shown-fade');
       jQuery('.logo-text').addClass('hidden-fade').removeClass('shown-fade');
       jQuery('.download-page').removeClass('hidden-fade').addClass('shown-fade');
-      jQuery('.close').removeClass('hidden-fade').addClass('shown-fade');
+      jQuery('.close').show();
       jQuery('.titlebar > span').text('Download Bazzite DX');
     });
 
@@ -421,7 +421,7 @@
       jQuery('.logo').removeClass('hidden-fade').addClass('shown-fade');
       jQuery('.logo-text').removeClass('hidden-fade').addClass('shown-fade');
       jQuery('.download-page').addClass('hidden-fade').removeClass('shown-fade');
-      jQuery('.close').addClass('hidden-fade').removeClass('shown-fade');
+      jQuery('.close').hide();
       jQuery('.titlebar > span').text('Bazzite DX (Developer eXperience)');
     });
 
