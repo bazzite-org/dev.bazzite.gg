@@ -8,14 +8,90 @@
     body {
       margin: 0;
       overflow: hidden;
-      background: linear-gradient(45deg, #000622, #310042);
+      background:linear-gradient(45deg, #000622, #310042);
     }
     canvas {
       display: block;
     }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      position:absolute;
+    }
+    .logo,
+    .logo-text {
+      font-family: "FiraCode Nerd Font";
+      white-space: nowrap;
+      margin-right: 20px;
+      text-rendering: optimizeLegibility;
+      font-variant-ligatures: normal;
+    }
+    .white-text {
+      color: #cfcfcf;
+    }
+    .white-bg {
+      background-color:#cfcfcf;
+    }
+    .blue-text {
+      color: #2976d3;
+    }
+    .purple-text {
+      color: #c061cb;
+    }
   </style>
+  <link href="https://cdn.jsdelivr.net/gh/mshaugh/nerdfont-webfonts@v3.3.0/build/firacode-nerd-font.css" rel="stylesheet">
 </head>
 <body>
+  <div class="container">
+    <div class="logo">
+      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%%%%%%<span class="white-bg">====</span>%%%%%%%%%%</span><br>
+      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%%%%%%%%</span><br>
+      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%%%%%%%%%%</span><br>
+      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%%%%%%%%%</span><span class="purple-text">###</span><br>
+      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%%%%%%%<span class="purple-text">######</span></span><br>
+      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp<span class="white-bg">==&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp====</span><span class="purple-text white-bg">===</span><span class="purple-text">######</span></span></span><br>
+      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp<span class="white-bg">==&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp==</span><span class="purple-text white-bg">=======</span><span class="purple-text">#####</span></span></span><br>
+      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%<span class="purple-text">####<span class="white-bg">======</span>#####</span></span><br>
+      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%<span class="purple-text">#######<span class="white-bg">=====</span>#####</span></span><br>
+      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%<span class="purple-text">#########<span class="white-bg">=====</span>#####</span></span><br>
+      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%<span class="purple-text">##########<span class="white-bg">=====</span>#####</span></span><br>
+      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">====</span><span class="purple-text">###########<span class="white-bg">=====</span>######</span></span><br>
+      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp%%%%%%%%<span class="white-bg">====</span><span class="purple-text">#########<span class="white-bg">======</span>######</span></span><br>
+      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%%%%%%%<span class="white-bg">=====</span><span class="purple-text">#####<span class="white-bg">========</span>######</span></span><br>
+      <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%%%%<span class="purple-text">###<span class="white-bg">===============</span>#######</span></span><br>
+      <span class="purple-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%<span class="purple-text">#######<span class="white-bg">==========</span>#########</span></span><br>
+      <span class="purple-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp#######################</span><br>
+      <span class="purple-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp###################</span><br>
+      <span class="purple-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp###########</span><br>
+    </div>
+    <div class="logo-text white-text">
+      <span class="purple-text">󱋩</span>&nbsp->&nbspbazzite-gnome:testing <br>
+      <span class="purple-text">󰣛</span>&nbsp->&nbspBazzite 41 (FROM Fedora Silverblue)<br>
+      <span class="purple-text"></span>&nbsp->&nbspLinux 6.13.9-104.bazzite.fc41.x86_64<br>
+      <span class="purple-text">󰅐</span>&nbsp->&nbsp3 hours, 15 mins<br>
+      <span class="purple-text">󰔠</span>&nbsp->&nbspSpawned on Mar 04 2024<br>
+      <br>
+      <span class="purple-text">󰾰</span>&nbsp->&nbspMS-7C60 (1.0)<br>
+      <span class="purple-text">󰻠</span>&nbsp->&nbspAMD Ryzen Threadripper 3960X 24-Core (48) @ 4.57z<br>
+      <span class="purple-text">󰍛</span>&nbsp->&nbspAMD Radeon RX 6900 XT [Discrete]<br>
+      <span class="purple-text"></span>&nbsp->&nbsp14.08 GiB / 62.67 GiB (22%)<br>
+      <span class="purple-text"></span>&nbsp->&nbsp737.42 GiB / 1.82 TiB (40%) - btrfs [Read-only]<br>
+      <span class="purple-text"></span>&nbsp->&nbsp3.07 TiB / 3.64 TiB (84%) - btrfs<br>
+      <span class="purple-text"></span>&nbsp->&nbsp240.34 GiB / 931.51 GiB (26%) - btrfs<br>
+      <span class="purple-text">󰍹</span>&nbsp->&nbsp3440x1440 @ 160 Hz in 34" [External]<br>
+      <span class="purple-text">󰖺</span>&nbsp->&nbspWooting Two<br>
+      <span class="purple-text">󰖺</span>&nbsp->&nbspMicrosoft X-Box 360 pad 0<br>
+      <br>
+      <span class="purple-text">󰕮</span>&nbsp->&nbspGNOME 47.4<br>
+      <span class="purple-text"></span>&nbsp->&nbspMutter (Wayland)<br>
+      <span class="purple-text"></span>&nbsp->&nbspbash 5.2.32<br>
+      <span class="purple-text"></span>&nbsp->&nbspPtyxis 47.12<br>
+      <span class="purple-text">󰏖</span>&nbsp->&nbsp2379 (rpm), 120 (flatpak), 40 (brew)<br>
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
   <script>
     const scene = new THREE.Scene();
@@ -32,7 +108,7 @@
 
     const geometry = new THREE.SphereGeometry(20, 100, 100);
     const material = new THREE.MeshBasicMaterial({
-      color: 0x000000,
+      color: 0x882ADF,
       wireframe: true,
       transparent: true,
       opacity: 0.3
