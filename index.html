@@ -20,6 +20,8 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="//dev.bazzite.gg/content/icon.svg" type="image/x-icon" />
   <link rel="apple-touch-icon" href="https://dev.bazzite.gg/content/apple.png" />
+  <link rel="canonical" href="https://dev.bazzite.gg/" />
+  <link rel='shortlink' href='https://dev.bazzite.gg/' />
   <meta name="theme-color" content="#5236cc">
   <style>
     body {
@@ -44,14 +46,18 @@
       margin-right: 30px;
     }
     .logo,
-    .logo-text {
+    .logo-text,
+    .download-page {
       font-family: "FiraCode Nerd Font";
-      white-space: nowrap;
       text-rendering: optimizeLegibility;
       font-variant-ligatures: normal;
       font-size: 20px;
       line-height: 24px;
-      float: left;
+      float:left;
+    }
+    .logo,
+    .logo-text {
+      white-space: nowrap;
     }
     .white-text {
       color: #cfcfcf;
@@ -99,6 +105,7 @@
     }
     a {
       color:#2976d3;
+      cursor: pointer;
     }
 
     footer {
@@ -122,6 +129,65 @@
 
     .affiliated {
       color: #bbb;
+    }
+
+    .download-page {
+      clear: left;
+      text-align: center;
+    }
+
+    #image-builder {
+      margin:20px;
+      width:100%;
+    }
+
+    #image-builder > span {
+      margin-bottom: 30px;
+      display: inline-block;
+    }
+
+    #image-builder > div {
+      margin-top: 20px;
+    }
+
+    #image-builder select {
+      background:none;
+      color: #cfcfcf;
+      border:1px solid #cfcfcf;
+      border-radius:0px;
+      padding:10px 5px;
+      margin-top: 5px;
+    }
+
+    .close {
+      color: #f2f2f2;
+      position: absolute;
+      right: 15px;
+      top: 12px;
+      background: #434343;
+      border-radius: 100%;
+      padding: 6px 9px;
+      font-size: 12px;
+    }
+
+    .hidden-fade {
+      opacity: 0;
+      overflow: hidden;
+      max-height: 0px;
+      visiblity: hidden!important;
+      margin-top: 0px!important;
+    }
+
+    .shown-fade {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1.0);
+      max-height: 100%;
+    }
+
+    .fade-transition {
+      transition: opacity 0.45s ease-in-out, transform 0.65s ease-in-out, visibility 0s;
+      display: block;
     }
 
     @media only screen and (max-width: 1230px) {
@@ -190,8 +256,9 @@
     <div class="terminal">
       <div class="titlebar">
         <span>Bazzite DX (Developer eXperience)</span>
+        <a class="close fade-transition hidden-fade"><i class="fa fa-x"></i></a>
       </div>
-      <div class="logo">
+      <div class="logo fade-transition shown-fade">
         <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%%%%%%<span class="white-bg">====</span>%%%%%%%%%%</span><br>
         <span class="blue-text">&nbsp&nbsp&nbsp&nbsp&nbsp%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%%%%%%%%</span><br>
         <span class="blue-text">&nbsp&nbsp&nbsp&nbsp%%%%%%%%%<span class="white-bg">&nbsp&nbsp&nbsp&nbsp</span>%%%%%%%%%%%%%%%%</span><br>
@@ -212,7 +279,7 @@
         <span class="purple-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp###################</span><br>
         <span class="purple-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp###########</span><br>
       </div>
-      <div class="logo-text white-text">
+      <div class="logo-text white-text fade-transition shown-fade">
         <span class="purple-text"></span>&nbsp->&nbspNext-gen Linux Gaming, now for your workstation<br>
         <span class="purple-text">󰖺</span>&nbsp->&nbspBazzite-GDX for game developers <em>(Available Soon)</em><br>
         <span class="purple-text">󰣛</span>&nbsp->&nbspPowered by <a href="https://fedoraproject.org/" target="_blank">Fedora</a> &amp; <a href="https://universal-blue.org/" target="_blank">Universal Blue</a><br>
@@ -232,12 +299,121 @@
         <span class="purple-text">󰋼</span>&nbsp->&nbsp<a href="https://bazzite.gg/" target="_blank">See our main website for more information</a><br>
         <span class="purple-text">󰈙</span>&nbsp->&nbsp<a href="https://docs.bazzite.gg/" target="_blank">View User Documentation</a><br>
         <br>
-        <span class="purple-text"></span>&nbsp->&nbsp<a href="#">Downloads coming soon</a>
+        <span class="purple-text"></span>&nbsp->&nbsp<a class="download-later">Downloads coming soon!</a>
+      </div>
+      <div class="download-page white-text fade-transition hidden-fade">
+        <form id="image-builder" class="animate" data-anim-type="fadeInUp" autocomplete="off">
+          <span>
+            This form will give you the correct ISO download link for your hardware and use case.
+          </span>
+          <div class="gpu">
+            <label for="gpuVendor">Who is the vendor of your primary GPU?</label>
+            <div class="select-wrapper glow-effect">
+              <select id="gpuVendor" name="gpuVendor">
+                <option disabled selected value>Select your primary GPU vendor</option>
+                <optgroup label="Modern GPUs">
+                  <option value="amd">AMD (RX 4xx+)</option>
+                  <option value="nvidia-open">Nvidia (RTX Series | GTX 16xx Series+)</option>
+                  <option value="intel">Intel (ARC+)</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="desktopEnvironment fade-transition hidden-fade">
+            <label for="desktopEnvironment">What desktop environment do you prefer?</label>
+            <div class="select-wrapper glow-effect">
+              <select id="desktopEnvironment" name="desktopEnvironment">
+                <option disabled selected value>Pick a desktop environment</option>
+                <option value="kde">KDE</option>
+                <option value="gnome">GNOME</option>
+              </select>
+            </div>
+          </div>
+          <div class="developerType fade-transition hidden-fade">
+            <label for="developerType">What type of developer are you?</label>
+            <div class="select-wrapper glow-effect">
+              <select id="developerType" name="developerType">
+                <option disabled selected value>Pick a use case</option>
+                <option disabled value="gamedev">Game Developer (Coming soon)</option>
+                <option selected value="cloud">Other Developer</option>
+              </select>
+            </div>
+          </div>
+          <div class="download-button fade-transition hidden-fade">
+            <a href="" target="_blank">Download now!</a>
+          </div>
+        </form>
       </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script type="text/javascript">
+    jQuery('a.download').on('click', function() {
+      jQuery('.logo').addClass('hidden-fade').removeClass('shown-fade');
+      jQuery('.logo-text').addClass('hidden-fade').removeClass('shown-fade');
+      jQuery('.download-page').removeClass('hidden-fade').addClass('shown-fade');
+      jQuery('.close').removeClass('hidden-fade').addClass('shown-fade');
+      jQuery('.titlebar > span').text('Download Bazzite DX');
+    });
+
+    jQuery('a.close').on('click', function() {
+      jQuery('.logo').removeClass('hidden-fade').addClass('shown-fade');
+      jQuery('.logo-text').removeClass('hidden-fade').addClass('shown-fade');
+      jQuery('.download-page').addClass('hidden-fade').removeClass('shown-fade');
+      jQuery('.close').addClass('hidden-fade').removeClass('shown-fade');
+      jQuery('.titlebar > span').text('Bazzite DX (Developer eXperience)');
+    });
+
+    jQuery('#image-builder #gpuVendor').on('change', function() {
+      var gpuVendor = jQuery(this).val();
+      if (gpuVendor != '') {
+        jQuery('#image-builder .desktopEnvironment').removeClass('hidden-fade').addClass('shown-fade');
+      }
+    });
+
+    jQuery('#image-builder #desktopEnvironment').on('change', function() {
+      var desktopEnvironment = jQuery(this).val();
+      if (desktopEnvironment != '') {
+        jQuery('#image-builder .developerType').removeClass('hidden-fade').addClass('shown-fade');
+      }
+    });
+
+    jQuery('#image-builder #gpuVendor, #image-builder #desktopEnvironment, #image-builder #developerType').on('change', function() {
+      var gpuVendor = jQuery('#gpuVendor').parent('div').parent('div').hasClass('hidden-fade') ? '' : jQuery('#gpuVendor').val();
+      var desktopEnvironment = jQuery('#desktopEnvironment').parent('div').parent('div').hasClass('hidden-fade') ? '' : jQuery('#desktopEnvironment').val();
+      var developerType = jQuery('#developerType').parent('div').parent('div').hasClass('hidden-fade') ? '' : jQuery('#developerType').val();
+
+      var allSelectionsMade = true;
+      jQuery('#image-builder .shown-fade select').each(function() {
+          if (!jQuery(this).val()) {
+              allSelectionsMade = false;
+              return false;
+          }
+      });
+
+      if (allSelectionsMade) {
+        var imageName = 'bazzite-dx';
+
+        if (desktopEnvironment === 'gnome') {
+          imageName += '-gnome'
+        }
+
+        if (gpuVendor === 'nvidia') {
+          imageName += '-nvidia-open'
+        }
+
+        if (developerType === 'gamedev') {
+          imageName.replace('dx', 'gdx');
+        }
+
+        jQuery('.download-button > a').attr('href', 'https://download.bazzite.gg/' + imageName + '-stable-amd64.iso');
+        jQuery('.download-button').removeClass('hidden-fade').addClass('shown-fade');
+      } else {
+        jQuery('.download-buttoon').addClass('hidden-fade').removeClass('shown-fade');
+      }
+    });
+
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       75,
