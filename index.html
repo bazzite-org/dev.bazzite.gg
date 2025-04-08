@@ -7,12 +7,13 @@
   <style>
     body {
       margin: 0;
-      overflow: hidden;
-      background:linear-gradient(45deg, #000622, #310042);
       font-family: "DM Sans";
+      background: #000;
     }
     canvas {
-      display: block;
+      position: fixed;
+      z-index: -1;
+      background:linear-gradient(45deg, #000622, #310042);
     }
     .container {
       display: flex;
@@ -131,6 +132,10 @@
       .titlebar > span {
         font-size: 16px;
       }
+
+      .container {
+        align-items: first baseline;
+      }
     }
 
     @media only screen and (max-width: 500px) {
@@ -211,7 +216,7 @@
     <span class="affiliated">Bazzite is not affiliated with or endorsed by the <span style="white-space:nowrap;">Fedora Project</span></span>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-  <script>
+  <script type="text/javascript">
     document.getElementById("current-year").textContent = new Date().getFullYear();
 
     const scene = new THREE.Scene();
