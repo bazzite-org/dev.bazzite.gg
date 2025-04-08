@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bazzite Developer eXperience</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: black;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script>
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    const geometry = new THREE.SphereGeometry(20, 100, 100);
+    const material = new THREE.MeshBasicMaterial({
+      color: 0x882ADF,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.3
+    });
+
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
+
+    const vertices = geometry.attributes.position;
+    const initialPositions = vertices.array.slice();
+    const offsets = Array.from({ length: vertices.count }, () => Math.random() * 10);
+    const randomDisplacements = Array.from({ length: vertices.count * 3 }, () => (Math.random() - 0.5) * 0.5);
+
+    scene.fog = new THREE.FogExp2(0x000000, 0.02);
+    renderer.setClearColor(0x000000, 1);
+
+    camera.position.set(0, 0, 15);
+    camera.lookAt(0, 0, 0);
+
+    function animate(time) {
+      requestAnimationFrame(animate);
+
+      const waveSpeed = 0.0002;
+      const waveHeight = 3;
+      const timeFactor = time * waveSpeed;
+
+      for (let i = 0; i < vertices.count; i++) {
+        const ix = i * 3;
+        const x = initialPositions[ix];
+        const y = initialPositions[ix + 1];
+        const z = initialPositions[ix + 2];
+        const offset = offsets[i];
+
+        const magnitude = Math.sqrt(x * x + y * y + z * z);
+        const wave = 1 + Math.sin(timeFactor + offset) * (waveHeight / magnitude);
+
+        vertices.array[ix] = x * wave + randomDisplacements[ix];
+        vertices.array[ix + 1] = y * wave + randomDisplacements[ix + 1];
+        vertices.array[ix + 2] = z * wave + randomDisplacements[ix + 2];
+      }
+
+      vertices.needsUpdate = true;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener("resize", () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
