@@ -31,6 +31,7 @@
       text-rendering: optimizeLegibility;
       font-variant-ligatures: normal;
       font-size: 20px;
+      line-height: 24px;
       float: left;
     }
     .white-text {
@@ -51,8 +52,8 @@
       padding:70px 30px 20px 0px;
       backdrop-filter: blur(20px);
       border: 1px solid #3e3e3e;
-      line-height: 24px;
       box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+      margin:25px;
     }
     .titlebar {
       background:#303030;
@@ -79,6 +80,44 @@
     }
     a {
       color:#2976d3;
+    }
+
+    @media only screen and (max-width: 1230px) {
+      .logo {
+        float: none;
+        margin-bottom: 20px;
+        margin-left: 90px;
+      }
+
+      .logo-text {
+        float: none;
+        margin-left: 20px;
+        white-space: normal;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .logo,
+      .logo-text {
+        font-size: 15px;
+        line-height: 19px;
+      }
+
+      .titlebar > span {
+        font-size: 16px;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      .logo,
+      .logo-text {
+        font-size: 12px;
+        line-height: 15px;
+      }
+
+      .titlebar > span {
+        font-size: 14px;
+      }
     }
   </style>
   <link href="https://cdn.jsdelivr.net/gh/mshaugh/nerdfont-webfonts@v3.3.0/build/firacode-nerd-font.css" rel="stylesheet">
@@ -112,7 +151,7 @@
       </div>
       <div class="logo-text white-text">
         <span class="purple-text">󰣛</span>&nbsp->&nbspPowered by <a href="https://fedoraproject.org/" target="_blank">Fedora</a> &amp; <a href="https://universal-blue.org/" target="_blank">Universal Blue</a><br>
-        <span class="purple-text"></span>&nbsp->&nbspThe next generation of Linux Gaming, now for your workstation<br>
+        <span class="purple-text"></span>&nbsp->&nbspNext-gen Linux Gaming, now for your workstation<br>
         <br>
         <span class="purple-text"></span>&nbsp->&nbspApplications by Flathub<br>
         <span class="purple-text"></span>&nbsp->&nbspCLI powered with Homebrew on-tap<br>
