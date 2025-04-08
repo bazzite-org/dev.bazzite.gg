@@ -9,6 +9,7 @@
       margin: 0;
       overflow: hidden;
       background:linear-gradient(45deg, #000622, #310042);
+      font-family: "DM Sans";
     }
     canvas {
       display: block;
@@ -82,6 +83,25 @@
       color:#2976d3;
     }
 
+    footer {
+      bottom: 0px;
+      position: absolute;
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      margin-bottom:20px;
+    }
+
+    footer a {
+      color: #fff;
+    }
+
+    .bazzite-name {
+      text-transform: lowercase;
+      font-family: MuseoModerno;
+      font-weight: 400;
+    }
+
     @media only screen and (max-width: 1230px) {
       .logo {
         float: none;
@@ -120,7 +140,15 @@
       }
     }
   </style>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link href="https://cdn.jsdelivr.net/gh/mshaugh/nerdfont-webfonts@v3.3.0/build/firacode-nerd-font.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css" integrity="sha512-v8QQ0YQ3H4K6Ic3PJkym91KoeNT5S3PnDKvqnwqFD1oiqIl653crGZplPdU5KKtHjO0QKcQ2aUlQZYjHczkmGw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css" integrity="sha512-DzC7h7+bDlpXPDQsX/0fShhf1dLxXlHuhPBkBo/5wJWRoTU6YL7moeiNoej6q3wh5ti78C57Tu1JwTNlcgHSjg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" integrity="sha512-58P9Hy7II0YeXLv+iFiLCv1rtLW47xmiRpC1oFafeKNShp8V5bKV/ciVtYqbk2YfxXQMt58DjNfkXFOn62xE+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <div class="container">
@@ -173,6 +201,13 @@
       </div>
     </div>
   </div>
+  <footer>
+    <span class="copyright-text"><span style="white-space:nowrap;">Copyright <span id="current-year"></span> <i class="fas fa-copyright"></i> <span class="bazzite-name">Bazzite Project</span></span> and <a style="white-space:nowrap;" href="https://universal-blue.org/" target="_blank">Universal Blue</a></span><br><br>
+    <script>
+      document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+    <span class="affiliated">Bazzite is not affiliated with or endorsed by the <span style="white-space:nowrap;">Fedora Project</span></span>
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
   <script>
     const scene = new THREE.Scene();
