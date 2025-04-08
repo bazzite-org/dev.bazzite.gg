@@ -31,14 +31,14 @@
       position: fixed;
       z-index: -1;
       background:linear-gradient(45deg, #000622, #310042);
+      top: 0px;
     }
     .container {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100%;
+      min-height: 100vh;
       width: 100%;
-      position:absolute;
     }
     .logo {
       margin-right: 30px;
@@ -102,12 +102,11 @@
     }
 
     footer {
-      bottom: 0px;
-      position: absolute;
       color: #fff;
       width: 100%;
       text-align: center;
       margin-bottom:20px;
+      margin-top:20px;
       text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
     }
 
@@ -228,14 +227,8 @@
       </div>
     </div>
   </div>
-  <footer>
-    <span class="copyright-text"><span style="white-space:nowrap;">Copyright <span id="current-year"></span> <i class="fas fa-copyright"></i> <span class="bazzite-name">Bazzite Project</span></span> and <a style="white-space:nowrap;" href="https://universal-blue.org/" target="_blank">Universal Blue</a></span><br>
-    <span class="affiliated">Bazzite is not affiliated with or endorsed by the <span style="white-space:nowrap;">Fedora Project</span></span>
-  </footer>
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
   <script type="text/javascript">
-    document.getElementById("current-year").textContent = new Date().getFullYear();
-
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       75,
@@ -303,5 +296,12 @@
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
   </script>
+  <footer>
+    <span class="copyright-text"><span style="white-space:nowrap;">Copyright <span id="current-year"></span> <i class="fas fa-copyright"></i> <span class="bazzite-name">Bazzite Project</span></span> and <a style="white-space:nowrap;" href="https://universal-blue.org/" target="_blank">Universal Blue</a></span><br>
+    <span class="affiliated">Bazzite is not affiliated with or endorsed by the <span style="white-space:nowrap;">Fedora Project</span></span>
+    <script type="text/javascript">
+      document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
 </body>
 </html>
