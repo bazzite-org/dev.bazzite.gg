@@ -324,7 +324,7 @@
         <span class="purple-text">󰋼</span>&nbsp->&nbsp<a href="https://bazzite.gg/" target="_blank">See our main website for more information</a><br>
         <span class="purple-text">󰈙</span>&nbsp->&nbsp<a href="https://docs.bazzite.gg/" target="_blank">View User Documentation</a><br>
         <br>
-        <span class="purple-text"></span>&nbsp->&nbsp<a class="download-later">Downloads coming soon!</a>
+        <span class="purple-text"></span>&nbsp->&nbsp<a class="download">Select your image now!</a>
       </div>
       <div class="download-page white-text fade-transition hidden-fade">
         <form id="image-builder" class="animate" data-anim-type="fadeInUp" autocomplete="off">
@@ -432,7 +432,7 @@
           imageName.replace('dx', 'gdx');
         }
 
-        jQuery('.download-button > a').attr('href', 'https://download.bazzite.gg/' + imageName + '-stable-amd64.iso');
+        jQuery('.download-button > a').attr('href', 'https://github.com/orgs/ublue-os/packages/container/package/' + imageName);
         jQuery('.download-button').removeClass('hidden-fade').addClass('shown-fade');
       } else {
         jQuery('.download-buttoon').addClass('hidden-fade').removeClass('shown-fade');
