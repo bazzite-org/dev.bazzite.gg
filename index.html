@@ -31,9 +31,10 @@
     }
     canvas {
       position: fixed;
-      z-index: -1;
-      background:linear-gradient(45deg, #000622, #310042);
+      z-index: 1;
       top: 0px;
+      pointer-events: none;
+      mix-blend-mode: luminosity;
     }
     .container {
       display: flex;
@@ -41,6 +42,8 @@
       align-items: center;
       min-height: 100vh;
       width: 100%;
+      z-index: 2;
+      position: relative;
     }
     .logo {
       margin-right: 30px;
@@ -194,6 +197,165 @@
     .fade-transition {
       transition: opacity 0.45s ease-in-out, transform 0.65s ease-in-out, visibility 0s;
       display: block;
+    }
+
+    @keyframes moveInCircle {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes moveVertical {
+      0% {
+        transform: translateY(-50%);
+      }
+      50% {
+        transform: translateY(50%);
+      }
+      100% {
+        transform: translateY(-50%);
+      }
+    }
+
+    @keyframes moveHorizontal {
+      0% {
+        transform: translateX(-50%) translateY(-10%);
+      }
+      50% {
+        transform: translateX(50%) translateY(10%);
+      }
+      100% {
+        transform: translateX(-50%) translateY(-10%);
+      }
+    }
+
+    .gradient-bg {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      overflow: hidden;
+      background: linear-gradient(40deg, rgb(138, 42, 226), rgb(0, 71, 171));
+      top: 0;
+      left: 0;
+      z-index: 0;
+      filter: brightness(0.6) contrast(1.2);
+    }
+
+    .gradient-bg svg {
+      display: none;
+    }
+
+    .gradient-bg .gradients-container {
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .gradient-bg .g1 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(18, 113, 255, 0.8) 0, rgba(18, 113, 255, 0) 50%) no-repeat;
+      mix-blend-mode: soft-light;
+
+      width: 90%;
+      height: 90%;
+      top: calc(50% - 90% / 2);
+      left: calc(50% - 90% / 2);
+
+      transform-origin: center center;
+      animation: moveVertical 30s ease infinite;
+
+      opacity: 1;
+    }
+
+    .gradient-bg .g2 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(221, 74, 255, 0.8) 0, rgba(221, 74, 255, 0) 50%) no-repeat;
+      mix-blend-mode: soft-light;
+
+      width: 90%;
+      height: 90%;
+      top: calc(50% - 90% / 2);
+      left: calc(50% - 90% / 2);
+
+      transform-origin: calc(50% - 400px);
+      animation: moveInCircle 20s reverse infinite;
+
+      opacity: 1;
+    }
+
+    .gradient-bg .g3 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(100, 220, 255, 0.8) 0, rgba(100, 220, 255, 0) 50%) no-repeat;
+      mix-blend-mode: soft-light;
+
+      width: 90%;
+      height: 90%;
+      top: calc(50% - 90% / 2 + 200px);
+      left: calc(50% - 90% / 2 - 500px);
+
+      transform-origin: calc(50% + 400px);
+      animation: moveInCircle 40s linear infinite;
+
+      opacity: 1;
+    }
+
+    .gradient-bg .g4 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(200, 50, 50, 0.8) 0, rgba(200, 50, 50, 0) 50%) no-repeat;
+      mix-blend-mode: soft-light;
+
+      width: 80%;
+      height: 80%;
+      top: calc(50% - 90% / 2);
+      left: calc(50% - 90% / 2);
+
+      transform-origin: calc(50% - 200px);
+      animation: moveHorizontal 40s ease infinite;
+
+      opacity: 0.7;
+    }
+
+    .gradient-bg .g5 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(180, 180, 50, 0.8) 0, rgba(180, 180, 50, 0) 50%) no-repeat;
+      mix-blend-mode: soft-light;
+
+      width: calc(90% * 2);
+      height: calc(90% * 2);
+      top: calc(50% - 90%);
+      left: calc(50% - 90%);
+
+      transform-origin: calc(50% - 800px) calc(50% + 200px);
+      animation: moveInCircle 20s ease infinite;
+
+      opacity: 1;
+    }
+
+    .gradient-bg .interactive {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(140, 100, 255, 0.8) 0, rgba(140, 100, 255, 0) 50%) no-repeat;
+      mix-blend-mode: soft-light;
+
+      width: 100%;
+      height: 100%;
+      top: -50%;
+      left: -50%;
+
+      opacity: 0.7;
+    }
+
+    .gradients-container {
+      top: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      filter: brightness(0.4) blur(45px) !important;
     }
 
     @media only screen and (max-width: 1230px) {
@@ -542,7 +704,46 @@
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var interBubble = document.querySelector('.interactive');
+        var curX = 0;
+        var curY = 0;
+        var tgX = 0;
+        var tgY = 0;
+
+        function move() {
+            var height = window.scrollY;
+            var winheight = window.innerHeight;
+            if (height <= winheight) {
+              curX += (tgX - curX) / 20;
+              curY += (tgY - curY) / 20;
+              interBubble.style.transform = "translate(" + Math.round(curX) + "px, " + Math.round(curY) + "px)";
+            }
+
+            requestAnimationFrame(function () {
+                move();
+            });
+        }
+
+        window.addEventListener('mousemove', function (event) {
+            tgX = event.clientX;
+            tgY = event.clientY;
+        });
+
+        move();
+    });
   </script>
+  <div class="gradient-bg">
+    <div class="gradients-container">
+      <div class="g1"></div>
+      <div class="g2"></div>
+      <div class="g3"></div>
+      <div class="g4"></div>
+      <div class="g5"></div>
+      <div class="interactive"></div>
+    </div>
+  </div>
   <footer>
     <span class="copyright-text"><span style="white-space:nowrap;">Copyright <span id="current-year"></span> <i class="fas fa-copyright"></i> <span class="bazzite-name">Bazzite Project</span></span> and <a style="white-space:nowrap;" href="https://universal-blue.org/" target="_blank">Universal Blue</a></span><br>
     <span class="affiliated">Bazzite is not affiliated with or endorsed by the <span style="white-space:nowrap;">Fedora Project</span></span>
