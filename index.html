@@ -599,24 +599,18 @@
       jQuery('.titlebar > span').text('Bazzite DX (Developer eXperience)');
     });
 
-    jQuery('#image-builder #gpuVendor').on('change', function() {
-      var gpuVendor = jQuery(this).val();
-      if (gpuVendor != '') {
-        jQuery('#image-builder .desktopEnvironment').removeClass('hidden-fade').addClass('shown-fade');
-      }
-    });
-
-    jQuery('#image-builder #desktopEnvironment').on('change', function() {
-      var desktopEnvironment = jQuery(this).val();
-      if (desktopEnvironment != '') {
-        jQuery('#image-builder .developerType').removeClass('hidden-fade').addClass('shown-fade');
-      }
-    });
-
     jQuery('#image-builder #gpuVendor, #image-builder #desktopEnvironment, #image-builder #developerType').on('change', function() {
       var gpuVendor = jQuery('#gpuVendor').parent('div').parent('div').hasClass('hidden-fade') ? '' : jQuery('#gpuVendor').val();
       var desktopEnvironment = jQuery('#desktopEnvironment').parent('div').parent('div').hasClass('hidden-fade') ? '' : jQuery('#desktopEnvironment').val();
       var developerType = jQuery('#developerType').parent('div').parent('div').hasClass('hidden-fade') ? '' : jQuery('#developerType').val();
+
+      if (gpuVendor != '') {
+        jQuery('#image-builder .desktopEnvironment').removeClass('hidden-fade').addClass('shown-fade');
+      }
+
+      if (desktopEnvironment != '') {
+        jQuery('#image-builder .developerType').removeClass('hidden-fade').addClass('shown-fade');
+      }
 
       var allSelectionsMade = true;
       jQuery('#image-builder .shown-fade select').each(function() {
