@@ -656,7 +656,7 @@
           imageName.replace('dx', 'gdx');
         }
 
-        var rebaseCommand = 'rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/' + imageName;
+        var rebaseCommand = 'brh rebase ' + imageName + ':stable';
         jQuery('.download-button .image-name').attr('href', 'https://github.com/orgs/ublue-os/packages/container/package/' + imageName).text(imageName);
         jQuery('.download-button .rebase-command').text(rebaseCommand);
         jQuery('.download-button').removeClass('hidden-fade').addClass('shown-fade');
